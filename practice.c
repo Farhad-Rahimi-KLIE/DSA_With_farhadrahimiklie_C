@@ -7,24 +7,17 @@ typedef struct Node
     struct Node* next;
 } Node;
 
-Node* InerstAtBeg(Node* head, int value){
+Node* InsertAtBegining(Node* head, int data){
     Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->data = value;
+    newNode->data = data;
     newNode->next = head;
     head = newNode;
     return head;
 }
 
-Node* AtEnd(Node* head, int value){
+Node* InsertAtEnd(Node* head, int data){
     Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->data = value;
-    newNode->next = NULL;
-
-    if (head == NULL)
-    {
-        return newNode;
-    }
-
+    newNode->data = data;
     Node* temp = head;
 
     while (temp->next != NULL)
@@ -32,6 +25,7 @@ Node* AtEnd(Node* head, int value){
         temp = temp->next;
     }
     temp->next = newNode;
+    newNode->next = NULL;
     return head;
 }
 
@@ -49,13 +43,13 @@ void display(Node* head){
 int main(){
     Node* head = NULL;
 
-    head = InerstAtBeg(head, 10);
-    head = InerstAtBeg(head, 20);
-    head = InerstAtBeg(head, 30);
-    head = AtEnd(head, 40);
-    head = AtEnd(head, 50);
+    head = InsertAtBegining(head, 10);
+    head = InsertAtBegining(head, 20);
+    head = InsertAtBegining(head, 30);
 
-    printf("LInked List is Here: \n");
+    head = InsertAtEnd(head, 40);
+    head = InsertAtEnd(head, 50);
     display(head);
+
     return 0;
 }
