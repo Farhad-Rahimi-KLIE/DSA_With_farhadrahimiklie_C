@@ -27,6 +27,128 @@ void InsertAtBegining(Node** head, int data){
     return;
 }
 
+void InsertAtEnd(Node** head, int data){
+    Node* newNode = CreateNode(data);
+    if (*head == NULL)
+    {
+        *head = newNode;
+        return;
+    }
+    Node* temp = *head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+    return;
+}
+
+void InsertAtIndex(Node** head, int data, int index){
+    Node* newNode = CreateNode(data);
+    if (*head == NULL)
+    {
+        *head = newNode;
+        return;
+    }
+    if (index == 0)
+    {
+        InsertAtBegining(head, data);
+        return;
+    }
+    Node* temp = *head;
+    for (int i = 0; i < index-1; i++)
+    {
+        temp = temp->next;
+    }
+    newNode->next = temp->next;
+    temp->next = newNode;
+    return;
+}
+
+void DeleteAtBegining(Node** head){
+    if (*head == NULL)
+    {
+        printf("Linked List is empty, Nothing to delete.");
+        return;
+    }
+    if ((*head)->next == NULL)
+    {
+        free(*head);
+        *head = NULL;
+        return;
+    }
+    Node* temp = *head;
+    *head = (*head)->next;
+    temp->next = NULL;
+    free(temp);
+    return;
+}
+
+void DeleteAtEnd(Node** head){
+    if (*head == NULL)
+    {
+        printf("Linked List is empty, Nothing to delete.");
+        return;
+    }
+    if ((*head)->next == NULL)
+    {
+        free(*head);
+        *head = NULL;
+        return;
+    }
+    Node* temp = *head;
+    Node* q = (*head)->next;
+    while (q->next != NULL)
+    {
+        q = q->next;
+        temp = temp->next;
+    }
+    temp->next = NULL;
+    free(q);
+    return;
+}
+
+void DeleteAtIndex(Node** head, int index){
+    if ((*head)->next == NULL)
+    {
+        free(*head);
+        *head = NULL;
+        return;
+    }
+    if (index == 0)
+    {
+        DeleteAtBegining(head);
+        return;
+    }
+    
+    Node* temp = *head;
+    Node* q = (*head)->next;
+    for (int i = 0; i < index-1; i++)
+    {
+        temp = temp->next;
+        q = q->next;
+    }
+    temp->next = q->next;
+    q->next = NULL;
+    free(q);
+    return;
+}
+
+int Search(Node* head, int key){
+    Node* temp = head;
+    int index = 0;
+    while (temp != NULL)
+    {
+        if (temp->data == key)
+        {
+            return index;
+        }
+        temp = temp->next;
+        index++;
+    }
+    return -1;
+}
+
 void display(Node* head){
     Node* temp = head;
 
@@ -44,6 +166,22 @@ int main() {
     InsertAtBegining(&head, 30);
     InsertAtBegining(&head, 40);
 
+    // InsertAtEnd(&head, 600);
+    // InsertAtIndex(&head, 600, 2);
+
+    // DeleteAtBegining(&head);
+    // DeleteAtEnd(&head);
+    // DeleteAtIndex(&head, 1);
+
     display(head);
+
+    int result = Search(head, 10);
+    if (result != -1)
+    {
+        printf("Founded at Index : %d \n", result);
+    }else{
+        printf("Not Found \n");
+    }
+    
     return 0;
 }
