@@ -62,4 +62,67 @@ It covers **beginner to advanced** topics with clean, well-structured, and easy-
 ---
 
 ## 📂 Project Structure (Example)
+📦 DSA-in-C
+┣ 📁 Pattern
+┣ 📁 Array
+┣ 📁 Search
+┣ 📁 String
+┣ 📁 Structure
+┣ 📁 Pointers
+┣ 📁 LinkedList
+┣ 📁 Stack
+┣ 📁 Queue
+┣ 📁 Sorting
+┣ 📁 Tree
+┣ 📁 Graph
+┣ README.md
 
+
+
+---
+
+## 🛠 How to Run the Programs
+
+1. Clone the repository
+
+---
+
+## 🛠 How to Run the Programs
+
+1. Clone the repository
+ https://github.com/Farhad-Rahimi-KLIE/DSA_With_farhadrahimiklie_C.git
+
+
+## Go to the project folder
+DSA_With_farhadrahimiklie_C
+
+## Compile any C file using GCC
+gcc filename.c -o output
+
+## Run the program
+./output
+
+## 🎯 Purpose of This Repository
+
+✔ To practice core DSA concepts
+✔ To help beginners understand implementation in C
+✔ To keep code organized for future revision
+✔ To build problem-solving and logical thinking
+
+## 🤝 Contributions
+
+Contributions are welcome!
+Feel free to fork the repo, make changes, and create a pull request ✅
+
+## 📬 Contact
+
+If you have any questions or suggestions, reach out to me:
+
+💻 GitHub: https://github.com/Farhad-Rahimi-KLIE
+
+✉ Email: farhadrahimiklieprogrammer@gmail.com
+
+## ⭐ Support
+
+If you like this repository, please consider giving it a ⭐!
+It keeps me motivated to create more useful content 😊
